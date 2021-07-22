@@ -11,7 +11,7 @@ def notifyMe(title,message):
         message=message,
         #creating icon for the notification
         #we need to give adress of icon file(in ico file format)
-        app_icon="\\icon.ico",
+        app_icon="C:\\Users\\Anurag Kumar\\Desktop\\icon.ico",
         # the notification stays for 50sec
         timeout=15
     )
