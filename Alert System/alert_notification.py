@@ -13,7 +13,7 @@ def notifyMe(title,message):
         #we need to give adress of icon file(in ico file format)
         app_icon="C:\\Users\\Anurag Kumar\\Desktop\\icon.ico",
         # the notification stays for 50sec
-        timeout=15
+        timeout=50
     )
 
 #if we detect person without mask
