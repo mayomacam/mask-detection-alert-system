@@ -9,7 +9,11 @@ The SMTP class supports the with statement. When used like this, the SMTP QUIT c
 Identify yourself to an ESMTP server using EHLO. The hostname argument defaults to the fully qualified domain name of the local host
 * SMTP.login(user, password, *, initial_response_ok=True)
 Log in on an SMTP server that requires authentication. The arguments are the username and the password to authenticate with. If there has been no previous EHLO or HELO command this session, this method tries ESMTP EHLO first. This method will return normally if the authentication was successful, or may raise the following exceptions
-* SMTP.starttls(keyfile=None, certfile=None, context=None)¶
+* SMTP.starttls(keyfile=None, certfile=None, context=None)
 Put the SMTP connection in TLS (Transport Layer Security) mode. All SMTP commands that follow will be encrypted. You should then call ehlo() again
 * SMTP.sendmail(from_addr, to_addrs, msg, mail_options=(), rcpt_options=())
 Send mail
+# ALERT NOTIFICATION
+* Plyer is a Python library for accessing features of your hardware / platforms.
+* plyer.notification= <plyer.facades.notification.Notification object>
+Notification proxy to plyer.facades.Notification
