@@ -1,6 +1,2 @@
 #ignore creds file
 *.json
-
-token.json
-
-client_secret_63063835404-8kv353utgq13uvfv1vea71vsdhhd8r64.apps.googleusercontent.com.json
