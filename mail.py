@@ -131,6 +131,6 @@ file = '2.jpg'
 message_text = """Hey there!
     I'm testing my first gmail api message #""" + seed_num
 message = a.create_message(to, message_text, seed_num, file)
-# print(message)
+#print(message)
 print('seed number is: '+seed_num)
 a.send_message(message)
