@@ -1,3 +1,3 @@
-# mask-and-distance-detection-alert-system
+# mask-detection-alert-system
 
 # Final group  Major project 
