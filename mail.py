@@ -86,7 +86,7 @@ class Emailalert():
         message = MIMEMultipart()
         message['to'] = to
         message['from'] = 'amanrkt231217@gmail.com'
-        message['subject'] = '#{} Test message from {} to {}!'.format(seed_num, message['from'], message['to'])
+        message['subject'] = '#{} alert message from {} to {}!'.format(seed_num, message['from'], message['to'])
 
         msg = MIMEText(message_text)
         message.attach(msg)
@@ -129,7 +129,7 @@ print('seed number is: '+seed_num)
 to = 'testingfacemasksys@gmail.com'
 file = '2.jpg'
 message_text = """Hey there!
-    I'm testing my first gmail api message #""" + seed_num
+    System alert no mask #""" + seed_num
 message = a.create_message(to, message_text, seed_num, file)
 #print(message)
 print('seed number is: '+seed_num)
