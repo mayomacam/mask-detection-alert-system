@@ -3,9 +3,9 @@ import smtplib
 #instead of providing email adress and password in python program
 #We are passing these credential using sytem environment variables for security purpose
 
-EMAIL_ADDRESS = os.environ.get('testingfacemasksys@gmail.com') 
+EMAIL_ADDRESS = 'testingfacemasksys@gmail.com' 
 #it will get value of system environment variables named "EMAIL_USER"
-EMAIL_PASSWORD = os.environ.get('@testtesttest4269#')
+EMAIL_PASSWORD = '@testtesttest4269#'
 #it will get value of system environment variables named "EMAIL_PASS" saved in local system
 
 
@@ -33,3 +33,4 @@ with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
 #in order to send the email through python using gmail account we have to do some setting in our gmail account
 #We have to turn on less secure app access and have to remove two factor authentication in gmail account
 #We are using a demo gmail id to send the message.
+# os.environ.get(
