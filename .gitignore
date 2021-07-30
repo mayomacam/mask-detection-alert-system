@@ -4,3 +4,5 @@
 *.json
 
 alert_email.py
+
+*.png

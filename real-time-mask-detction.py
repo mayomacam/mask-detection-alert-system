@@ -7,25 +7,13 @@
 from keras.models import load_model
 import cv2
 import numpy as np
-import tkinter
-import tkinter as tk
-from tkinter import messagebox
-import smtplib
-
-
-# In[ ]:
-
-
-# Iinialize Tkinter
-root = tkinter.Tk()
-root.withdraw()
 
 
 # In[ ]:
 
 
 # Load trained deep learning model
-model = load_model('face-mask-image-classification-with-keras_2.h5')
+model = load_model('face-mask-image-classification-with-keras.h5')
 
 
 # In[ ]:
@@ -54,10 +42,6 @@ color_dict={0:(0,255,0),1:(0,0,255)}
 # In[ ]:
 
 
-SUBJECT = "Subject"
-TEXT = "violeted Fece mask policy"
-
-
 while(True):
 
     ret, img=source.read()
@@ -77,16 +61,18 @@ while(True):
         cv2.rectangle(img,(x,y),(x+w,y+h),color_dict[label],2)
         cv2.rectangle(img,(x,y-40),(x+w,y),color_dict[label],-1)
         cv2.putText(img, labels_dict[label], (x, y-10),cv2.FONT_HERSHEY_SIMPLEX,0.8,(255,255,255),2)
-        # If level = 1 then  it means wearing No mask and 0 means wearing mask
+        #If level = 1 then  it means wearing No mask and 0 means wearing mask
         if (label == 1):
-            messagebox.showwarning("Access Denied")
+            #messagebox.showwarning("Access Denied")
             #%run mail.py
-            #%run alert_notification.py
+            %run alert_notification.py
+            #%run alert_email.py
+            
             
         else:
             pass
             break
-    cv2.imshow('Live scanning',img)
+    cv2.imshow('Live face scanning',img)
     key=cv2.waitKey(1)
     
     if(key==27):
