@@ -5,20 +5,26 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
-from tkinter import * 
-from tkinter import messagebox
+from plyer import notification
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email.mime.audio import MIMEAudio
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 import base64, mimetypes
-import random, string
+import random, string, sys
 
 #scopes or given permission access links
 #SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 SCOPES = ['https://www.googleapis.com/auth/gmail.send']
 
+def notifyMe(self,title,message):
+    notification.notify(
+        title=title,
+        message=message,
+        app_icon="icon.ico",
+        timeout=50
+    )
 
 class Emailalert():
     def __init__(self):
@@ -62,11 +68,7 @@ class Emailalert():
             print('An error occurred: %s' % error)
         with open('mesg.txt', 'w') as mesg:
             mesg.write(str(message_send))
-    
-        # show a message about mail sent
-        root = Tk()
-        root.geometry("300x200")
-        messagebox.showinfo("showinfo", "Alert send!")
+
 
         #def create_message(sender, to, subject, message_text):
     def create_message(self, to, message_text, seed_num, file):
@@ -127,10 +129,11 @@ seed_num = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
 print('seed number is: '+seed_num)
 # create mail data
 to = 'testingfacemasksys@gmail.com'
-file = '2.jpg'
+file = sys.argv[1]
 message_text = """Hey there!
     System alert no mask #""" + seed_num
 message = a.create_message(to, message_text, seed_num, file)
 #print(message)
 print('seed number is: '+seed_num)
 a.send_message(message)
+notifyMe("Mask Detection Alert!","Someone is without mask","alert send!")
