@@ -23,7 +23,7 @@ def notifyMe(self,title,message):
         title=title,
         message=message,
         app_icon="icon.ico",
-        timeout=50
+        timeout=5
     )
 
 class Emailalert():
