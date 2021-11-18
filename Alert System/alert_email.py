@@ -3,9 +3,9 @@ import smtplib
 #instead of providing email adress and password in python program
 #We are passing these credential using sytem environment variables for security purpose
 
-EMAIL_ADDRESS = 'testingfacemasksys@gmail.com' 
+EMAIL_ADDRESS = '' 
 #it will get value of system environment variables named "EMAIL_USER"
-EMAIL_PASSWORD = '@testtesttest4269#'
+EMAIL_PASSWORD = ''
 #it will get value of system environment variables named "EMAIL_PASS" saved in local system
 
 
